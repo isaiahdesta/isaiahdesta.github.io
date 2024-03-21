@@ -1,1 +1,0 @@
-# isaiahdesta.github.io

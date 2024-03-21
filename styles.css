@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Pitch black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.icon-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-item {
+    margin: 17px;
+    position: relative;
+}
+
+.icon-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    transition: transform 1.5s ease; /* Slower transition */
+}
+
+/* Adjust specific icons that are smaller by default */
+.icon-link .fa-youtube { font-size: 2.4rem; }
+.icon-link .fa-x-twitter { font-size: 2.5rem; }
+.icon-link .fa-pen-to-square { font-size: 2.4rem; margin-left: 3px;}
+.icon-link .fa-instagram { font-size: 2.6rem; /* Make Instagram icon larger */ }
+
+.icon-link i {
+    /* Apply dual-tone effect with gradients */
+    background: linear-gradient(45deg, #FF6AD5, #0099FF);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.7s ease; /* Slower transition */
+}
+
+.icon-link:hover i {
+    transform: scale(1.7); /* Enlarge icons on hover */
+}
