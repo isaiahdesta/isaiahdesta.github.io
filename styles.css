@@ -8,6 +8,26 @@ body {
     min-height: 100vh;
 }
 
+.navbar {
+    width: 100%;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Matches body background */
+    z-index: 10; /* Ensures navbar is above other content */
+}
+
+.navbar-content {
+    font-size: 23px;
+    background: linear-gradient(45deg, #FF6AD5, #0099FF); /* Dual-tone effect */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .icon-column {
     display: flex;
     flex-direction: column;
@@ -16,7 +36,8 @@ body {
 
 .icon-item {
     margin: 17px;
-    position: relative;
+    display: flex; /* Centers the icon and text inline */
+    justify-content: center;
 }
 
 .icon-link {
@@ -24,23 +45,45 @@ body {
     color: inherit;
     display: flex;
     align-items: center;
-    transition: transform 1.5s ease; /* Slower transition */
+    transition: transform 1s ease; /* Adjusted for quicker animation */
 }
 
-/* Adjust specific icons that are smaller by default */
-.icon-link .fa-youtube { font-size: 2.4rem; }
-.icon-link .fa-x-twitter { font-size: 2.5rem; }
-.icon-link .fa-pen-to-square { font-size: 2.4rem; margin-left: 3px;}
-.icon-link .fa-instagram { font-size: 2.6rem; /* Make Instagram icon larger */ }
+/* Size adjustments for specific icons */
+.icon-link .fa-youtube,
+.icon-link .fa-x-twitter,
+.icon-link .fa-pen-to-square,
+.icon-link .fa-instagram {
+    font-size: 2.4rem; /* Standardize icon size */
+}
 
-.icon-link i {
-    /* Apply dual-tone effect with gradients */
-    background: linear-gradient(45deg, #FF6AD5, #0099FF);
+.icon-link .fa-instagram { font-size: 2.6rem; } /* Instagram icon slightly larger */
+.icon-link .fa-pen-to-square { margin-left: 3px; }
+
+.icon-link i, .icon-link .handle {
+    background: linear-gradient(45deg, #FF6AD5, #0099FF); /* Dual-tone effect */
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: transform 0.7s ease; /* Slower transition */
 }
 
-.icon-link:hover i {
-    transform: scale(1.7); /* Enlarge icons on hover */
+.handle {
+    font-size: 25px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 0; /* Hide text initially */
+    opacity: 0; /* Make text transparent initially */
+    margin-left: 30px; /* Space between icon and text */
+    transition: max-width 0.4s ease-out, opacity 0.4s ease, visibility 0s linear 0.4s; /* Adjusted for quicker animation */
+}
+
+.icon-link:hover .handle, .handle.show {
+    max-width: 300px; /* Show text on hover */
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon-link:hover i, .icon-link i.animate {
+    transform: scale(1.1); /* Example animation for icons */
+    transition: transform 0.4s ease; /* Adjusted for quicker animation */
 }

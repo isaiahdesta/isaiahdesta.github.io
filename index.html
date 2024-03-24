@@ -4,32 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isaiah Desta</title>
-    <link rel="icon" type="image/png" href="signature.png">
     <script src="https://kit.fontawesome.com/907e0661c8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-content" id="navbarText">Isaiah Desta's...</div>
+    </nav>
     <div class="icon-column">
         <div class="icon-item">
             <a href="https://isaiahdesta.substack.com/" class="icon-link" target="_blank">
                 <i class="fa-regular fa-pen-to-square"></i>
+                <span class="handle">isaiahdesta.substack.com</span>
             </a>
         </div>
         <div class="icon-item">
             <a href="https://youtube.com/@isaiahdesta_" class="icon-link" target="_blank">
                 <i class="fa-brands fa-youtube"></i>
+                <span class="handle">youtube.com/@isaiahdesta_</span>
             </a>
         </div>
         <div class="icon-item">
             <a href="https://X.com/isaiahdesta_" class="icon-link" target="_blank">
                 <i class="fa-brands fa-x-twitter"></i>
+                <span class="handle">x.com/isaiahdesta_</span>
             </a>
         </div>
         <div class="icon-item">
             <a href="https://www.instagram.com/isaiahdesta_/" class="icon-link" target="_blank">
                 <i class="fa-brands fa-instagram"></i>
+                <span class="handle">instagram.com/isaiahdesta_/</span>
             </a>
         </div>
     </div>
+    <script>
+        const navbarText = document.getElementById('navbarText');
+        
+        const toggleAnimations = () => {
+            document.querySelectorAll('.icon-link .handle').forEach(handle => {
+                handle.classList.toggle('show');
+            });
+            document.querySelectorAll('.icon-link i').forEach(icon => {
+                icon.classList.toggle('animate');
+            });
+        };
+
+        // Listen for mouseover (hover) and click events
+        navbarText.addEventListener('mouseover', toggleAnimations);
+        navbarText.addEventListener('click', toggleAnimations);
+    </script>
 </body>
 </html>
